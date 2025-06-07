@@ -73,7 +73,7 @@ export function Navigation() {
                                         Get started with CBA Infotech
                                     </ListItem>
                                     <ListItem href="/" title="Location">
-                                        Gurdasput , kalanpur road
+                                        Gurdaspur , kalanpur road
                                     </ListItem>
                                     <ListItem href="/contact" title="Contact">
                                          Reach Us through Email
@@ -98,7 +98,7 @@ export function Navigation() {
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger>Merits</NavigationMenuTrigger>
+                            <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[300px] gap-4">
                                     <li>
@@ -110,35 +110,26 @@ export function Navigation() {
                                                 </div>
                                             </Link>
                                         </NavigationMenuLink>
+                                        <NavigationMenuLink asChild>
+                                            <Link href="/contact">
+                                                <div className="font-medium">Contact</div>
+                                                <div className="text-muted-foreground">
+                                                    for any queries contact us
+                                                </div>
+                                            </Link>
+                                        </NavigationMenuLink>
                                         
                                         
                                     </li>
                                 </ul>
                             </NavigationMenuContent>
                         </NavigationMenuItem>
-                        <NavigationMenuItem>
-                            <NavigationMenuTrigger>Simple</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                                <ul className="grid w-[200px] gap-4">
-                                    <li>
-                                        <NavigationMenuLink asChild>
-                                            <Link href="/contact">Contact</Link>
-                                        </NavigationMenuLink>
-                                        <NavigationMenuLink asChild>
-                                            <Link href="#">Documentation</Link>
-                                        </NavigationMenuLink>
-                                        <NavigationMenuLink asChild>
-                                            <Link href="#">Blocks</Link>
-                                        </NavigationMenuLink>
-                                    </li>
-                                </ul>
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
+                        
 
                     </NavigationMenuList>
-                    <ModeToggle />
+                    
                 </NavigationMenu>
-
+<ModeToggle />
             </div>
             <Separator/>
         </>
