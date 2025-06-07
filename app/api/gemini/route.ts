@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
 
     const response = await genAI.models.generateContent({
     model: "gemini-2.0-flash",
-    contents:`${message} give a precise and to the point answer.if anyone asks about anything rather than cba infotech just say i don't know only ask questions related to cba infotech.`,
+    contents:`${message} give a precise and to the point answer.`,
   });
 console.log(response)
 const text = response.text

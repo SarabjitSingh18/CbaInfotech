@@ -8,8 +8,11 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import axios from "axios"
 import { MessageCircle, X, Loader2 } from "lucide-react"
 
+// Define message type once for reuse and better type safety
+type Message = { type: "user" | "bot"; text: string }
+
 export default function ChatBot() {
-  const [messages, setMessages] = useState<{ type: "user" | "bot", text: string }[]>([])
+  const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState("")
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -17,7 +20,8 @@ export default function ChatBot() {
   const handleSend = async () => {
     if (!input.trim()) return
 
-    const userMessage = { type: "user", text: input }
+    // Explicitly type message to keep TypeScript happy
+    const userMessage: Message = { type: "user", text: input }
     setMessages((prev) => [...prev, userMessage])
     setInput("")
     setLoading(true)
@@ -36,7 +40,7 @@ export default function ChatBot() {
   return (
     <>
       <div className="fixed bottom-4 right-4 z-50">
-        <Button variant="outline" onClick={() => setOpen(!open)}>
+        <Button variant="outline" onClick={() => setOpen(!open)} aria-label={open ? "Close chatbot" : "Open chatbot"}>
           {open ? <X className="w-5 h-5" /> : <MessageCircle className="w-5 h-5" />}
           <span className="ml-2">{open ? "Close" : "Ask AI"}</span>
         </Button>
@@ -61,7 +65,8 @@ export default function ChatBot() {
               </div>
             ))}
             {loading && (
-              <div className="p-2 rounded-lg bg-muted text-left mr-auto w-fit text-sm italic opacity-70">
+              <div className="p-2 rounded-lg bg-muted text-left mr-auto w-fit text-sm italic opacity-70 flex items-center gap-2">
+                <Loader2 className="animate-spin w-4 h-4" />
                 Typing...
               </div>
             )}
@@ -73,8 +78,9 @@ export default function ChatBot() {
               placeholder="Ask something..."
               className="flex-grow"
               disabled={loading}
+              aria-label="Type your message here"
             />
-            <Button onClick={handleSend} disabled={loading}>
+            <Button onClick={handleSend} disabled={loading} aria-label="Send message">
               {loading ? <Loader2 className="animate-spin w-4 h-4" /> : "Send"}
             </Button>
           </div>
