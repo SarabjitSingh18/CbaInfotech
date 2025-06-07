@@ -21,7 +21,7 @@ export default function HeroSection() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
            <Link href="/courses"> <Button  variant="secondary" size="lg">Explore Courses</Button> </Link>
-            <Button variant="outline" size="lg">Contact Us</Button>
+            <Link href={"/contact"}><Button variant="outline" size="lg">Contact Us</Button></Link>
           </div>
         </div>
 
