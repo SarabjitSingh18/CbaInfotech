@@ -1,8 +1,13 @@
 import { notFound } from "next/navigation"
 import { blogs } from "@/lib/data"
 
-export default function BlogDetailPage({ params }: { params: { slug: string } }) {
-  const blog = blogs.find((blog) => blog.slug === params.slug)
+export default async function  BlogDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+    const {slug} = await params
+  const blog = blogs.find((blog) => blog.slug === slug)
 
   if (!blog) return notFound()
 
