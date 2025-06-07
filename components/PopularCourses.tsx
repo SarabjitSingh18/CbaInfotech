@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "./ui/separator";
+import Link from "next/link";
 
 const courses = [
   {
@@ -33,7 +34,7 @@ export default function PopularCourses() {
 
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {courses.map((course, index) => (
-        <Card key={index} className="text-left hover:shadow-xl transition">
+        <Link key={index} href="/courses"><Card className="text-left hover:shadow-xl transition">
           <CardHeader>
             <div className="flex items-center justify-between">
               <CardTitle className="text-gray-900 dark:text-white">
@@ -51,6 +52,7 @@ export default function PopularCourses() {
             </Button>
           </CardContent>
         </Card>
+        </Link>
       ))}
     </div>
   </div>

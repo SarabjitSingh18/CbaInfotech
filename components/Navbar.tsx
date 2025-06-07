@@ -42,9 +42,11 @@ export function Navigation() {
         <>
 
             <div className="flex justify-between m-2">
+                <Link href="/">
                 <h2 className="text-3xl md:text-4xl hidden lg:block font-extrabold tracking-tight bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                     CBA InfoTech
                 </h2>
+                </Link>
 
                 <NavigationMenu className="" >
                     <NavigationMenuList>
@@ -101,29 +103,15 @@ export function Navigation() {
                                 <ul className="grid w-[300px] gap-4">
                                     <li>
                                         <NavigationMenuLink asChild>
-                                            <Link href="#">
-                                                <div className="font-medium">Components</div>
+                                            <Link href="/blogs">
+                                                <div className="font-medium">Blogs</div>
                                                 <div className="text-muted-foreground">
                                                     Browse all components in the library.
                                                 </div>
                                             </Link>
                                         </NavigationMenuLink>
-                                        <NavigationMenuLink asChild>
-                                            <Link href="#">
-                                                <div className="font-medium">Documentation</div>
-                                                <div className="text-muted-foreground">
-                                                    Learn how to use the library.
-                                                </div>
-                                            </Link>
-                                        </NavigationMenuLink>
-                                        <NavigationMenuLink asChild>
-                                            <Link href="#">
-                                                <div className="font-medium">Blog</div>
-                                                <div className="text-muted-foreground">
-                                                    Read our latest blog posts.
-                                                </div>
-                                            </Link>
-                                        </NavigationMenuLink>
+                                        
+                                        
                                     </li>
                                 </ul>
                             </NavigationMenuContent>
@@ -134,7 +122,7 @@ export function Navigation() {
                                 <ul className="grid w-[200px] gap-4">
                                     <li>
                                         <NavigationMenuLink asChild>
-                                            <Link href="#">Components</Link>
+                                            <Link href="/contact">Contact</Link>
                                         </NavigationMenuLink>
                                         <NavigationMenuLink asChild>
                                             <Link href="#">Documentation</Link>
