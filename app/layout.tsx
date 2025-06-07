@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import ChatBot from "@/components/Chatbot";
+import { Footer } from "@/components/Footer";
 
 
 const geistSans = Geist({
@@ -39,7 +40,9 @@ export default function RootLayout({
        
             {children}
             <ChatBot />
+<Footer/>
            </ThemeProvider>
+             
       </body>
     </html>
        

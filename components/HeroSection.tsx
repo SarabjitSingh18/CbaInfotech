@@ -20,7 +20,14 @@ export default function HeroSection() {
             Learn Web Development, Python, Java, Data Structures & more with industry-grade project-based training.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-           <Link href="/courses"> <Button  variant="secondary" size="lg">Explore Courses</Button> </Link>
+           <Link href="/courses">
+  <Button
+    size="lg"
+    className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out rounded-md px-6 py-4"
+  >
+    🚀 Explore Courses
+  </Button>
+</Link>
             <Link href={"/contact"}><Button variant="outline" size="lg">Contact Us</Button></Link>
           </div>
         </div>
